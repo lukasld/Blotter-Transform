@@ -1,0 +1,8 @@
+__pycache__/
+htmlcov/
+.tox/
+*.py[cod]
+*$py.class
+.coverage
+coverage.xml
+.isort.cfg

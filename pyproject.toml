@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "blotter_transform"
+version = "0.1.0"
+authors = [
+  { name="Lukas Lesina Debiasi", email="lukas.debiasi@gmail.com" }
+]
+description = ""
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["pandas==2.0.0",
+				"scipy==1.10.1",
+				"scikit-learn==1.2.2",
+				"fuzzywuzzy==0.18.0",
+				"python-Levenshtein==0.20.9",
+				"pre-commit==3.2.2", 
+				"pytest==7.3.1",
+				"tox==4.4.12"]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+envlist = py39,py310
+
+[testenv]
+deps = 
+	black
+	flake8
+	isort
+	pylint
+	pytest
+	coverage
+commands = 
+	black blotter_transform
+	isort blotter_transform
+	pytest
+	coverage run --source=blotter_transform --branch -m pytest .
+    coverage report -m
+	coverage html
+	pylint blotter_transform
+"""
