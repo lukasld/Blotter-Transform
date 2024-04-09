@@ -40,8 +40,8 @@ To run the simple testcase and to compute the daily return csv, create a new pyt
 ```
 import blotter_transform as bt
 
-in_path = ("/<abs-path>/<to>/practical.csv")
-out_path = ("/<abs-path>/<to>/practical_out.csv")
+in_path = ("/<abs-path>/<to>/blotter.csv")
+out_path = ("/<abs-path>/<to>/blotter_out.csv")
 
 bt.main(in_path, out_path)
 ```
@@ -70,8 +70,6 @@ Furthermore, the package Framework could be published to PyPI.
 Some tests have been implemented for the `utils.py` , tests for both `BlotterSeries` and `BlotterDataframe` are missing, this is due to lack of time, but would be considered top-priority for next steps.
 
 Functionalities could be better scoped-out and custom error and warning- messages implemented.
-
-This functionality has only been tested on the given `practical.csv` file and the modification of it. However more thorough tests for differnt datasets have to follow, both for performance and completion.
 
 ### TODOS
 
